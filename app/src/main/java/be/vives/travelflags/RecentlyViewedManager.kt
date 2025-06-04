@@ -1,4 +1,15 @@
 package be.vives.travelflags
 
-class RecentlyViewedManager {
+object RecentlyViewedManager {
+    private val recentlyViewedCountries = mutableListOf<String>()
+
+    fun addCountry(country: String) {
+        if (!recentlyViewedCountries.contains(country)) {
+            recentlyViewedCountries.add(country)
+        }
+    }
+
+    fun getRecentlyViewedCountries(): List<String> {
+        return recentlyViewedCountries
+    }
 }
